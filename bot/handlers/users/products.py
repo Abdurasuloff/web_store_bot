@@ -101,8 +101,7 @@ async def show_product(call: types.CallbackQuery, callback_data:dict):
         await call.message.answer_photo(product_url, caption=text, reply_markup=keyboard)
     except:
         await call.message.answer_photo(product_image, caption=text,  reply_markup=keyboard)
-    finally:
-        await call.message.answer(text, reply_markup=keyboard)
+   
     
     
   
