@@ -88,12 +88,21 @@ async def show_product(call: types.CallbackQuery, callback_data:dict):
     text += f"<b>Ma'lumot: </b> {product[2]}\n\n"
     text += f"<b>Narxi: </b> {product[3]} so'm\n\n" 
     
+    product_image = product[-1]
+    
+    product_url = "https://storetgbot.pythonanywhere.com/media/" + str(product_image)
+    
     keyboard = await shop_keyboard(product[0], call.from_user.id, subcategory_id=product[4])
     
     # print(product["image"])
     await call.message.delete()
-    print(product[-1])
-    await call.message.answer(text, reply_markup=keyboard)
+    # print(product[-1])
+    try:
+        await call.message.answer_photo(product_url, caption=text, reply_markup=keyboard)
+    except:
+        await call.message.answer_photo(product_image, caption=text,  reply_markup=keyboard)
+    finally:
+        await call.message.answer(text, reply_markup=keyboard)
     
     
   
