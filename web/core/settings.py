@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-q&h#!a!@$8tmrm=)#m7i9m(*gk9%g5t-aisq5a!pni28+fju)8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['akbarjon.uz', "www.akbarjon.uz"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -150,12 +150,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 
-STATICFILES_DIRS = ('/home/akbarjon/akbarjon.uz/django/web/static_files',)
-STATIC_ROOT = '/home/akbarjon/akbarjon.uz/django/web/static'
+STATICFILES_DIRS = [BASE_DIR.joinpath("staticfiles")]
+STATIC_ROOT = BASE_DIR.joinpath("static")
 MEDIA_URL = 'media/'
-MEDIA_ROOT = '/home/akbarjon/akbarjon.uz/django/web/media'
+MEDIA_ROOT = BASE_DIR.joinpath("media")
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
