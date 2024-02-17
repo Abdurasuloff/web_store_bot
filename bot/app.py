@@ -1,5 +1,5 @@
 from aiogram import executor
-
+import background
 from loader import dp, db
 
 
@@ -20,6 +20,6 @@ async def on_startup(dispatcher):
     
     
 
-
+background.task()
 if __name__ == '__main__':
     executor.start_polling(dp, on_startup=on_startup)
