@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'bot',
+    'django_crontab',
     # 'github_storages',
 ]
 
@@ -85,9 +87,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': Path(__file__).resolve().parent.parent.parent / 'bot' / 'data' / 'bot.sqlite3' ,
+        'NAME': BASE_DIR / 'bot.sqlite3' ,
     }
 }
+
+CRONJOBS = [
+    ("*/2 * * * *", "bot.cron.run_bot")
+]
 
 
 # DATABASES = {

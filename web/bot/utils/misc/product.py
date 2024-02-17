@@ -3,7 +3,7 @@ from typing import List
 
 from aiogram.types import LabeledPrice
 
-from data import config
+from ...data import config
 
 
 @dataclass

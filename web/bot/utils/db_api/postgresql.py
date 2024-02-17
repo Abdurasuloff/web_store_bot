@@ -4,7 +4,7 @@ import asyncpg
 from asyncpg import Connection
 from asyncpg.pool import Pool
 import json
-from data import config
+from ...data import config
 
 class Database:
 

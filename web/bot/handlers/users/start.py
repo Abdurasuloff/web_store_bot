@@ -2,10 +2,10 @@ import asyncpg
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 
-from loader import dp, db, bot
-from data.config import ADMINS
+from ...loader import dp, db, bot
+from ...data.config import ADMINS
 
-from keyboards.default.buttons import menu
+from ...keyboards.default.buttons import menu
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
 

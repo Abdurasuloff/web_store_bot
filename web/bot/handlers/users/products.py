@@ -1,13 +1,13 @@
 from aiogram import types
-from loader import dp, db, bot
-from keyboards.default.buttons import category_buttons, menu
-from keyboards.inline.products_buttons import subcategories_keyboard, sub_category_callback, products_keyboard, product_callback, shop_keyboard, shopping_callback, buy_product, buy_product_callback, back_button, back_callback
+from ...loader import dp, db, bot
+from ...keyboards.default.buttons import category_buttons, menu
+from ...keyboards.inline.products_buttons import subcategories_keyboard, sub_category_callback, products_keyboard, product_callback, shop_keyboard, shopping_callback, buy_product, buy_product_callback, back_button, back_callback
 from aiogram.dispatcher.filters.builtin import Text
 from aiogram.types import ReplyKeyboardRemove
-from utils.misc.product import Product
+from ...utils.misc.product import Product
 from aiogram.types import LabeledPrice
-from data.shipping_methods import *
-from data.config import ADMINS
+from ...data.shipping_methods import *
+from ...data.config import ADMINS
 
 
 @dp.message_handler(text='🧾 Katalog')

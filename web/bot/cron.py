@@ -1,11 +1,8 @@
 from aiogram import executor
-import background
-from loader import dp, db
-
-
-import middlewares, filters, handlers
-from utils.notify_admins import on_startup_notify
-from utils.set_bot_commands import set_default_commands
+from .loader import dp, db
+from . import middlewares, filters, handlers
+from .utils.notify_admins import on_startup_notify
+from .utils.set_bot_commands import set_default_commands
 
 
 async def on_startup(dispatcher):
@@ -17,9 +14,7 @@ async def on_startup(dispatcher):
     # Bot ishga tushgani haqida adminga xabar berish
     await on_startup_notify(dispatcher)
     
-    
-    
 
-background.task("DO")
-if __name__ == '__main__':
+def run_bot():
     executor.start_polling(dp, on_startup=on_startup)
+    
