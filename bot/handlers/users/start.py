@@ -26,4 +26,4 @@ async def bot_start(message: types.Message):
     msg = f"{user[1]} bazaga qo'shildi.\nBazada {count[0]} ta foydalanuvchi bor."
     
     await bot.send_message(chat_id=ADMINS[0], text=msg)
-    await message.answer_photo("AgACAgIAAxkBAAEYiBBlxNIm_qukDY9BIlbI77rKeTSUzAACE9cxGw_DKEpxb3tLJMAiywEAAwIAA3MAAzQE")
+    # await message.answer_photo("AgACAgIAAxkBAAEYiBBlxNIm_qukDY9BIlbI77rKeTSUzAACE9cxGw_DKEpxb3tLJMAiywEAAwIAA3MAAzQE")1212
