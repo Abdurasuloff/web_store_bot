@@ -9,9 +9,10 @@ import os
 current_directory = os.getcwd()
 
 parent_directory = os.path.dirname(current_directory)
-PROXY_URL = "http://proxy.server:3128"
 
-bot = Bot(token=config.BOT_TOKEN, parse_mode=types.ParseMode.HTML, proxy=PROXY_URL)
+# PROXY_URL = "http://proxy.server:3128"
+
+# bot = Bot(token=config.BOT_TOKEN, parse_mode=types.ParseMode.HTML, proxy=PROXY_URL)
 bot = Bot(token=config.BOT_TOKEN, parse_mode=types.ParseMode.HTML, )
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)

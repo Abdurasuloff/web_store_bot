@@ -90,7 +90,7 @@ async def show_product(call: types.CallbackQuery, callback_data:dict):
     
     product_image = product[-1]
     
-    product_url = "https://storetgbot.pythonanywhere.com/media/" + str(product_image)
+    product_url = "http://35.77.224.125/media/" + str(product_image)
     
     keyboard = await shop_keyboard(product[0], call.from_user.id, subcategory_id=product[4])
     
